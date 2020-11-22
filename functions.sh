@@ -18,10 +18,10 @@ icanhazip() {
   IP=$(curl --silent https://icanhazip.com/)
 }
 
-ALL="$ALL curlmyip"
-curlmyip() {
-  IP=$(curl --silent http://curlmyip.com)
-}
+#ALL="$ALL curlmyip"
+#curlmyip() {
+#  IP=$(curl --silent http://curlmyip.com)
+#}
 
 ALL="$ALL ident"
 ident() {
@@ -43,10 +43,10 @@ ipecho() {
   IP=$(curl --silent http://ipecho.net/plain)
 }
 
-ALL="$ALL ipapp"
-ipapp() {
-  IP=$(curl --silent ip.appspot.com)
-}
+#ALL="$ALL ipapp"
+#ipapp() {
+#  IP=$(curl --silent ip.appspot.com)
+#}
 
 ALL="$ALL wgetip"
 wgetip() {
@@ -58,10 +58,10 @@ iptyk() {
   IP=$(curl --silent ip.tyk.nu)
 }
 
-ALL="$ALL corz"
-corz() {
-  IP=$(curl --silent corz.org/ip)
-}
+#ALL="$ALL corz"
+#corz() {
+#  IP=$(curl --silent corz.org/ip)
+#}
 
 ALL="$ALL whatismyipaddress"
 whatismyipaddress() {
@@ -73,39 +73,39 @@ ipinfo() {
   IP=$(curl --silent http://ipinfo.io/ip)
 }
 
-ALL="$ALL myip"
-myip() {
-  IP=$(curl --silent http://www.myip.net/ | \
-	grep "<b>Your IP Address:" | \
-	cut -d ':' -f 4 | \
-	cut -d '<' -f 1)
-}
+#ALL="$ALL myip"
+#myip() {
+#  IP=$(curl --silent http://www.myip.net/ | \
+#	grep "<b>Your IP Address:" | \
+#	cut -d ':' -f 4 | \
+#	cut -d '<' -f 1)
+#}
 
-ALL="$ALL shtuff"
-shtuff() {
- IP=$(curl --silent https://shtuff.it/myip/short/)
-}
+#ALL="$ALL shtuff"
+#shtuff() {
+# IP=$(curl --silent https://shtuff.it/myip/short/)
+#}
 
-ALL="$ALL monip"
-monip() {
-  IP=$(curl --silent http://monip.org/ | \
-	grep "IP :" | \
-	cut -d ':' -f 2 | \
-	cut -d '<' -f 1 )
-}
+#ALL="$ALL monip"
+#monip() {
+#  IP=$(curl --silent http://monip.org/ | \
+#	grep "IP :" | \
+#	cut -d ':' -f 2 | \
+#	cut -d '<' -f 1 )
+#}
 
 ##DNS method
-ALL="$ALL dns"
-dns() {
-  IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
-}
+#ALL="$ALL dns"
+#dns() {
+#  IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
+#}
 
 ##STUN method
-ALL="$ALL stun"
-stun() {
-    IP=$(stun-client -v stun.voiparound.com 2>&1 1>/dev/null | \
-	grep MappedAddress | \
-	sed -e 's/.*MappedAddress = //' -e 's/:.*//' | \
-	uniq)
-}
+#ALL="$ALL stun"
+#stun() {
+#    IP=$(stun-client -v stun.voiparound.com 2>&1 1>/dev/null | \
+#	grep MappedAddress | \
+#	sed -e 's/.*MappedAddress = //' -e 's/:.*//' | \
+#	uniq)
+#}
 
